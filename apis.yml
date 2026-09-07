@@ -1,7 +1,19 @@
 aid: adscanner
 name: Adscanner
-description: 'Adscanner is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'AdScanner — now trading as all eyes on screens (AEOS), the legal entity
+  all eyes on screens d.o.o. of Zagreb, Croatia, formerly Adscanner d.o.o. — is a
+  European TV and video advertising measurement, planning and activation platform
+  founded in 2012. In-house AI video-recognition software matches broadcast ad
+  creatives second-by-second against viewing data supplied by IPTV and telco
+  partners, producing cross-channel reach, frequency and attribution measurement
+  for linear, addressable and connected TV. Products include the AdScanner/AEOS
+  Cockpit analytics dashboard, the Apollo AI-based ex-ante planning module, TV
+  Boost data activation on post-code segments, and TV Match cross-device targeting
+  and TV-sync signals that fire digital campaigns when a spot airs. AEOS operates
+  in Croatia, Austria, Germany, Bulgaria and Switzerland. The company states in its
+  own FAQ that its data can be obtained via reporting (PDF, Excel, CSV, JSON) and
+  API on request, but publishes no public developer portal, API reference or
+  machine-readable contract.'
 url: https://raw.githubusercontent.com/api-evangelist/adscanner/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +24,17 @@ created: '2026-09-07'
 modified: '2026-09-07'
 tags:
 - Company
+- Advertising
+- AdTech
+- Television
+- Media Measurement
+- Analytics
+- Attribution
+- Connected TV
+- Addressable TV
+- Audience Data
+- Artificial Intelligence
+- Croatia
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +43,46 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://equityzen.com/company/adscanner
+  url: https://www.alleyesonscreens.com/
+- type: Documentation
+  url: https://www.alleyesonscreens.com/faq
+- type: Support
+  url: https://www.alleyesonscreens.com/getintouch
+- type: SignUp
+  url: https://cockpit.alleyesonscreens.com/
+- type: TermsOfService
+  url: https://www.alleyesonscreens.com/toc
+- type: PrivacyPolicy
+  url: https://www.alleyesonscreens.com/privacypolicy
+- type: DomainSecurity
+  url: security/adscanner-domain-security.yml
+- type: LLMsTxt
+  url: llms/adscanner-llms.txt
+- type: Plans
+  url: plans/adscanner-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/adscanner-rate-limits.yml
+x-enrichment:
+  date: '2026-09-07'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v3
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    The company's own FAQ states "our data can be obtained via reporting (pdf, Excel,
+    CSV, json) and API on request", but there is no developer portal, no API reference
+    and no spec anywhere on the site — the 29-URL sitemap has no /developers, /docs or
+    /api page, and info@alleyesonscreens.com plus the /getintouch form are the only
+    stated routes to the API.
+  evidence:
+  - url: https://www.alleyesonscreens.com/faq
+    status: 200
+  - url: https://www.alleyesonscreens.com/sitemap.xml
+    status: 200
+  - url: https://api.alleyesonscreens.com/openapi.json
+    status: 404
+  - url: https://api.alleyesonscreens.com/.well-known/api-catalog
+    status: 403
+  checked: '2026-09-07'

@@ -1,0 +1,104 @@
+generated: '2026-09-07'
+method: probed
+source: live HTTPS probes of the named /.well-known/ path list on every host this record knows
+note: No /.well-known document is served on any AdScanner / all eyes on screens host. This file records
+  the absence; no WellKnown or SecurityTxt pointer is wired in apis.yml because no path returned a document.
+hosts:
+- host: www.alleyesonscreens.com
+  note: Webflow-hosted marketing site; every /.well-known/* path returns a 404 HTML body reading 'Invalid
+    .well-known request'.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+- host: alleyesonscreens.com
+  note: Apex host; 301s to www for normal paths, serves the same Webflow 404 for /.well-known/*.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+- host: adscanner.tv
+  note: Legacy AdScanner domain, 301s to www.alleyesonscreens.com after the rebrand; same Webflow 404
+    for /.well-known/*.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+- host: api.alleyesonscreens.com
+  note: Bare nginx API host (CNAME frontend.alleyesonscreens.com, 185.214.92.5). Root and all spec paths
+    404; the /.well-known/ prefix is blanket-denied with 403, so absence here is a server policy rather
+    than a probed miss.
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 403
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    file: null
+  - path: /.well-known/api-catalog
+    status: 403
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    file: null
+- host: cockpit.alleyesonscreens.com
+  note: AEOS Cockpit SaaS login host, same nginx origin; /.well-known/ prefix blanket-denied with 403.
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 403
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    file: null
+  - path: /.well-known/api-catalog
+    status: 403
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    file: null
+summary:
+  hosts_probed: 5
+  paths_probed: 25
+  documents_found: 0

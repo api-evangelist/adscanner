@@ -1,0 +1,25 @@
+generated: '2026-09-07'
+method: searched
+source: https://www.alleyesonscreens.com/
+note: >-
+  AdScanner / all eyes on screens publishes no pricing or plans page. The sitemap
+  at https://www.alleyesonscreens.com/sitemap.xml (HTTP 200) enumerates all 29
+  public pages and contains no /pricing, /plans or /packages URL. Commercial
+  access to the Cockpit, to the reporting exports and to the API described in the
+  FAQ ("our data can be obtained via reporting (pdf, Excel, CSV, json) and API on
+  request") runs entirely through the contact form at /getintouch and
+  info@alleyesonscreens.com. This is an enterprise contact-sales motion with no
+  published tiers, quotas or list prices.
+provider: all eyes on screens d.o.o. (formerly Adscanner d.o.o.)
+pricing_url: null
+plan_count: 0
+plans: []
+currency: null
+billing_model: contact-sales
+evidence:
+- url: https://www.alleyesonscreens.com/sitemap.xml
+  status: 200
+  finding: 29 URLs, none matching pricing/plans/packages
+- url: https://www.alleyesonscreens.com/getintouch
+  status: 200
+  finding: contact form is the only stated route to commercial terms

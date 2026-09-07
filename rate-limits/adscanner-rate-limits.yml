@@ -1,0 +1,24 @@
+generated: '2026-09-07'
+method: searched
+source: https://www.alleyesonscreens.com/faq
+note: >-
+  No rate limits are published. AdScanner / all eyes on screens ships no public
+  developer portal, no API reference and no machine-readable contract, so there is
+  no document in which a limit, a window, a burst allowance, a 429 behaviour or a
+  RateLimit-* response header could be stated. The company's own FAQ confirms an
+  API exists but only "on request"; its terms are settled in the commercial
+  agreement rather than published. The API host api.alleyesonscreens.com answers
+  404 on every unauthenticated path probed, so no live rate-limit header could be
+  observed either.
+limit_count: 0
+limits: []
+headers: []
+exhaustion_status: null
+retry_after: null
+evidence:
+- url: https://www.alleyesonscreens.com/faq
+  status: 200
+  finding: 'FAQ states data is available via "reporting (pdf, Excel, CSV, json) and API on request"; no limits given'
+- url: https://api.alleyesonscreens.com/
+  status: 404
+  finding: bare nginx; no unauthenticated response carrying rate-limit headers
